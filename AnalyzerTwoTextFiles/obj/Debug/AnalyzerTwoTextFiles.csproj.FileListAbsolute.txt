@@ -1,0 +1,9 @@
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\bin\Debug\AnalyzerTwoTextFiles.exe.config
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\bin\Debug\AnalyzerTwoTextFiles.exe
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\bin\Debug\AnalyzerTwoTextFiles.pdb
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\obj\Debug\AnalyzerTwoTextFiles.Form1.resources
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\obj\Debug\AnalyzerTwoTextFiles.Properties.Resources.resources
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\obj\Debug\AnalyzerTwoTextFiles.csproj.GenerateResource.Cache
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\obj\Debug\AnalyzerTwoTextFiles.exe
+c:\users\tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\obj\Debug\AnalyzerTwoTextFiles.pdb
+C:\Users\Tim\documents\visual studio 2015\Projects\AnalyzerTwoTextFiles\AnalyzerTwoTextFiles\obj\Debug\AnalyzerTwoTextFiles.csprojResolveAssemblyReference.cache
