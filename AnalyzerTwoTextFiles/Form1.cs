@@ -17,8 +17,6 @@ namespace AnalyzerTwoTextFiles
         {
             InitializeComponent();
         }
-        //List<string> file1 = new List<string>();
-        //List<string> file2 = new List<string>();
 
         private void btn_generation_Click(object sender, EventArgs e)
         {
@@ -104,46 +102,5 @@ namespace AnalyzerTwoTextFiles
                 }
             }
         }
-        /*
-        private List<string> GetFile1()
-        {
-            file1.Clear();
-            using (StreamReader sr = new StreamReader("File1.txt"))
-            {
-                while (!sr.EndOfStream)
-                {
-                    string[] s = sr.ReadLine().Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    string arStr;
-                    arStr = "";
-                    for (int i = 0; i < s.Length; i++)
-                    {
-                        arStr += s[i] + " ";
-                    }
-                    file1.Add(arStr);
-                }
-                return file1;
-            }
-        }
-
-
-        private List<string> GetFile2()
-        {
-            file2.Clear();
-            using (StreamReader sr = new StreamReader("File2.txt"))
-            {
-                while (!sr.EndOfStream)
-                {
-                    string[] s = sr.ReadLine().Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    string arStr;
-                    arStr = "";
-                    for (int i = 0; i < s.Length; i++)
-                    {
-                        arStr += s[i] + " ";
-                    }
-                    file2.Add(arStr);
-                }
-                return file2;
-            }
-        }*/
     }
 }
