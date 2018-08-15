@@ -19,56 +19,79 @@ namespace AnalyzerTwoTextFiles
         }
         List<string> file1 = new List<string>();
         List<string> file2 = new List<string>();
+
         private void btn_generation_Click(object sender, EventArgs e)
         {
-            GetFile1();
             WriteToFile();
-            GetFile2();
             listView1.Clear();
-            for (int i = 0; i < file1.Count; i++)
+            List<Line> file1 = GetLines("File1.txt");
+            List<Line> file2 = GetLines("File2.txt");
+            List<Line> resultLines;
+            resultLines= CheckLines(file1, file2);
+            foreach (var line in resultLines)
             {
-                for (int j = 0; j < file2.Count; j++)
+                if (line.Type == Line.LineType.Unchanged)
                 {
-                    // Удаленные строки показываются красным цветом, добавленные - желтым, неизмененные - зеленым.
-                    if (file1[i] == file2[j])// НЕ измененая строка - зеленая
-                    {
-                        ListViewItem li = new ListViewItem();
-                        li.ForeColor = Color.Green;
-                        li.Text = file1[i];
-                        listView1.Items.Add(li);
-                        break;
-                    }
-                    if (file1[i] != file2[j]) // Удаленные строки показываются красным цветом,
-                    {
-                        ListViewItem li = new ListViewItem();
-                        li.ForeColor = Color.Red;
-                        li.Text = file1[i];
-                        listView1.Items.Add(li);
-                        break;
-                    }
-                    //else if ...// добавленные - желтым,
+                    ListViewItem li = new ListViewItem();
+                    li.ForeColor = Color.Green;
+                    li.Text = line.Text;
+                    listView1.Items.Add(li);
+                }
+                else if (line.Type == Line.LineType.Added)
+                {
+                    ListViewItem li = new ListViewItem();
+                    li.ForeColor = Color.Yellow;
+                    li.Text = line.Text;
+                    listView1.Items.Add(li);
+                }
+                else
+                {
+                    ListViewItem li = new ListViewItem();
+                    li.ForeColor = Color.Red;
+                    li.Text = line.Text;
+                    listView1.Items.Add(li);
                 }
             }
         }
 
-        private List<string> GetFile1()
+        private List<Line> CheckLines(List<Line> file1, List<Line> file2)
         {
-            file1.Clear();
-            using (StreamReader sr = new StreamReader("File1.txt"))
+            var exceptOriginLines = file1.Except(file2, new LineComparer());
+            foreach (var line in exceptOriginLines)
             {
-                while (!sr.EndOfStream)
-                {
-                    string[] s = sr.ReadLine().Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                    string arStr;
-                    arStr = "";
-                    for (int i = 0; i<s.Length;i++)
-                    {
-                        arStr += s[i] + " ";
-                    }
-                    file1.Add(arStr);
-                }
-                return file1;
+                line.Type = Line.LineType.Deleted;
             }
+
+            //все строки которых нет в оригинальном файле
+            var exceptOtherLines = file2.Except(file1, new LineComparer());
+            foreach (var line in exceptOtherLines)
+            {
+                line.Type = Line.LineType.Added;
+            }
+
+            //объединенная последовательность (без повторений)
+            var unionLines = file1.Union(file2, new LineComparer());
+
+            return unionLines.ToList();
+        }
+
+        private static List<Line> GetLines(string file)
+        {
+            List<Line> result = new List<Line>();
+
+            try
+            {
+                foreach (var line in File.ReadAllLines(file))
+                {
+                    result.Add(new Line { Text = line });
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Чтение {file} c ошибкой: {ex.Message}");
+            }
+
+            return result;
         }
         private void WriteToFile()
         {
@@ -82,6 +105,28 @@ namespace AnalyzerTwoTextFiles
                 }
             }
         }
+        /*
+        private List<string> GetFile1()
+        {
+            file1.Clear();
+            using (StreamReader sr = new StreamReader("File1.txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] s = sr.ReadLine().Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                    string arStr;
+                    arStr = "";
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        arStr += s[i] + " ";
+                    }
+                    file1.Add(arStr);
+                }
+                return file1;
+            }
+        }
+
+
         private List<string> GetFile2()
         {
             file2.Clear();
@@ -100,6 +145,6 @@ namespace AnalyzerTwoTextFiles
                 }
                 return file2;
             }
-        }
+        }*/
     }
 }

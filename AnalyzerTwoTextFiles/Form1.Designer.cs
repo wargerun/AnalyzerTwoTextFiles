@@ -52,9 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.GridLines = true;
             this.listView1.LabelEdit = true;
-            this.listView1.Location = new System.Drawing.Point(288, 35);
+            this.listView1.Location = new System.Drawing.Point(288, 41);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(395, 169);
+            this.listView1.Size = new System.Drawing.Size(395, 163);
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(3000, 42);
             this.listView1.UseCompatibleStateImageBehavior = false;
