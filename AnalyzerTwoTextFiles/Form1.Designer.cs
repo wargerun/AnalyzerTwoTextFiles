@@ -54,7 +54,7 @@
             this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(288, 41);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(395, 163);
+            this.listView1.Size = new System.Drawing.Size(471, 257);
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(3000, 42);
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -68,7 +68,7 @@
             this.textBox1.Location = new System.Drawing.Point(-1, 1);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(283, 203);
+            this.textBox1.Size = new System.Drawing.Size(283, 297);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "C# (произносится «си шарп») —\r\nРазработан группой инженеров\r\nпод руководством Анд" +
     "ерса Хейлсберга\r\nв компании Microsoft";
@@ -77,13 +77,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 206);
+            this.ClientSize = new System.Drawing.Size(758, 300);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btn_generation);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Программа анализирует два текстовых файла.";

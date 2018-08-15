@@ -17,8 +17,8 @@ namespace AnalyzerTwoTextFiles
         {
             InitializeComponent();
         }
-        List<string> file1 = new List<string>();
-        List<string> file2 = new List<string>();
+        //List<string> file1 = new List<string>();
+        //List<string> file2 = new List<string>();
 
         private void btn_generation_Click(object sender, EventArgs e)
         {
@@ -26,8 +26,7 @@ namespace AnalyzerTwoTextFiles
             listView1.Clear();
             List<Line> file1 = GetLines("File1.txt");
             List<Line> file2 = GetLines("File2.txt");
-            List<Line> resultLines;
-            resultLines= CheckLines(file1, file2);
+            List<Line> resultLines = CheckLines(file1, file2);
             foreach (var line in resultLines)
             {
                 if (line.Type == Line.LineType.Unchanged)
